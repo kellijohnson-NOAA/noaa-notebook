@@ -1,0 +1,262 @@
+# LaTeX
+
+## texhour
+
+### 2021-07-08
+
+Identify step by step how to do things such that your future self can replicate.
+
+#### Community
+
+LaTeX support providers want to be treated like gurus rather than supporters.
+
+LaTeX community is declining.
+Tinytex is positive because it is bringing in the next generation.
+Jonathan Fine is seen as a trouble-maker within the LaTeX community because he gets heated when he believes things are wrong.
+LaTex community believes that people should put up with the pain because it is best that is out there.
+The core of TeX users are mathematicians and physicists, certain batches of other fields that are highly mathematical.
+Group of people without much in common other than typsetting, so no shared purpose.
+
+#### Resources
+
+More of a distance between the users and developers
+
+* tex.stackexchange
+  * help pages
+* Learn LaTeX project
+* TeX book - search for tex book 3 .bib
+  * TeX by Examples
+  * Mathematical TeX by Example
+  * George Gretzer, More Math into LaTex
+  * cookbook built on examples
+  * built on examples
+* latex mailing list is low-volume and doesn't do much
+* issue trackers for particular projects
+* TeX act mailing list
+* google the error message, which normally leads to stackexchange
+* post to tex news groups
+  * news groups arose before there were search engines
+  * taking too many hours a day to keep up with them
+  * google groups is one of the worst news readers out there
+  * German tex news group
+  * [usenet](https://en.wikipedia.org/wiki/Usenet) - doesn't run on any one place, ntp servers, text only
+    * comp.text.tex - in the 1990s this was the stackexchange of its day
+      * FAQ
+      * CTAN sends an announcement to this user group for each time a package is submitted
+    * comp.lang.python
+* mathematics stack exchange - use mathjax
+  * have a big help page that is viewed a large number of times
+  * 
+* help documents or technical documents
+* users tend to use the same packages that they have used before
+
+Timescale for getting the package changed is quite long.
+Most journals do not actually use LaTeX themselves, so the motivation to maintain the packages is not high.
+
+SML and other formats are what publishers actually use.
+
+When TeX started it was a typesetting program.
+Journals required typesetting back then.
+Standardization and uniformity were key.
+Reproducibility is important if you have collaborators.
+Python is moving to the top three because of data science.
+
+Python community has crusty people in it.
+Elm community is the nicest.
+
+#### Different versions of TeX
+
+Unicode support is hard but needed.
+Luatex and ctex extended TeX to allow for multiple writing directions.
+TeX or pdfTeX doesn't have the interface to create characters.
+Hans et al. that are part of the contex community,
+the Dutch market thought it was critical to have illustrative content.
+Every document that is worth writing is worth designing.
+Where traditionally, TeX was more cookbook style.
+Luatex is a close to being a standalone system.
+One cannot combine all of the goals into a single platform.
+Originally, TeX was majorly focused on reproducibility.
+Four different rendering systems that produce different output given input.
+Unicode has a new addition every year or two.
+
+#### The Stories of English
+
+Until the advent of dictionaries there was not an agreement.
+It did not bother people that there were differences.
+Dictionaries led to standardized grammar and spelling.
+Even if you try to lay down rules, new words show up and it is difficult to decide how to deal with new entries.
+Difficult to come up with any standards that will be valid for a length of time.
+If we can keep software running and licensed that is the real limiting factor.
+Publishers really need to develop virtual machines to set up typesetting environments that will continue to typeset the documents well into the future.
+
+### 2021-06-10
+
+#### Question I have
+
+Should we worry about making pdfs accessible
+or should we be moving to html that can be
+printed to pdf.
+If an html is accessible will the printed pdf
+from this accessible html website be accessible.
+
+#### Jana Schroeder Holman Prize
+
+What should we do to help Jana.
+
+A problem is, there is already so much information out there,
+but it is not organized.
+
+#### [Tug accessibility](https://www.tug.org/twg/accessibility/)
+
+TeX user group (TUG)
+is not about end-user accessibility.
+
+[Tug pdf accessibility](https://www.tug.org/twg/accessibility/)
+
+##### Tree walkers
+
+* [aria-tree-walker](https://krautzource.github.io/aria-tree-walker/
+);
+how to make the plug in for screen reading with math jax automatic
+
+##### Self voicing
+
+Put the smarts into the website rather than the screen reader.
+Self voicing will compete with the screen reader,
+such as [JAWS](https://www.freedomscientific.com/products/software/jaws/)
+or [NV Access](https://www.nvaccess.org/download/).
+Someone who doesn't have the benefit of having a screen reader
+on their machine still might need help.
+Lots of people have problems with reading, such as dyslexia or
+light sensitivity.
+Using ARIA you can control the voicing of the screen reader but
+it takes extra effort in how the web page is coded.
+
+[Here](https://brichwin.pages.iu.edu/canvasBookmarklets.html
+)
+is an example of self voicing from Brian Richwine.
+
+##### Blind math
+
+[BlindMath](http://www.nfbnet.org/mailman/listinfo/blindmath_nfbnet.org)
+Blind Math list for those interested in mathematics
+
+##### DAISY
+
+[DAISY Accessible Publishing Database](http://kb.daisy.org/publishing/docs/)
+
+##### E-pub
+
+Moving towards e-pub in academia rather than pdf.
+
+##### pdf
+
+An interchange enabler to bridge different platforms.
+pdf is a page-description language as much as dvi is a page-description language.
+pdf can be structured with comments but it not essentially
+a way of conveying that information.
+Whereas, html can provide context to the meaning of the string of words.
+pdf has built-in limitations.
+pdf is not in-of itself a solution for accessibility.
+When we satart with a LaTeX document we have a dream that we have
+something that will provide information to who knows who.
+
+##### Information architecture
+
+Structure of the data.
+
+##### [Write the docs](writethedocs.org)
+
+Conference for people that write documentation.
+Technical documentation.
+
+##### Press books
+
+specialized version of wordpress software with the idea that
+you are making a book, you can output as pdf and it will know
+pdf pagination. 
+* https://old.uits.iu.edu/pressbooks
+* https://pressbooks.org
+* https://pressbooks.com/self-publishers/
+
+##### McGraw Hill Encyclopedia of Science and Technology
+
+Publish the set of Encyclopedia in entirely descriptive markup
+using sgml. Includes math, chemical formulas.
+Sampled images that were photographs.
+TeX was the bridge between the sgml and the printed page.
+xml has taken over sgml. 
+
+##### Systems thinking
+
+Multi-purposing as a hallmark is key. A multi-purpose document
+is more expensive to produce. 
+
+* need to categorize procedural markup such that it can be tagged
+and potentially removed
+
+### 2021-06-03
+
+#### Jana Schroeder
+
+A blind person who is trying to learn how to code to change careers.
+Applied to receive money from a Holman Prize for
+"blind coders blazing trails", a project
+she started to help blind computer users get acclimated to coding.
+If she receives the funding, then the money will be granted October 01, 2021
+and be good for a year.
+
+National coding symposium sponsored by American Printing House for the Blind
+and xxx
+aimed at school age blind kids and their parents.
+TV Ramen has done a lot of work but it was not known if this is still current.
+The [Quorum Programming Language](https://quorumlanguage.com)
+ is a programming language is supposed to be easier for blind people
+to learn to get their foot into the door.
+
+Visual studio is accessible to the blind more so than other software.
+Color coding is hard for her because she can't see it when errors are visual
+rather than verbal.
+
+- [x] send Sean A. and email to get information about resources for voice coding
+- [ ] get information to Jana Schroeder from Sean Anderson
+
+### 2021-05-20
+
+#### Participants
+
+* Johnathan G.
+  * first blind statistical professor
+  * an R user because markdown is accessible in its raw state
+* Derek Kerney
+  * coworker at Rstudio
+  * wrote thesis in LaTeX, but now rights in Rmd every day
+* Yuihu(Eway)
+  * software engineer at Rstudio
+  * author of knitr to combine LaTeX and R (reimplemented sweave)
+  * major contributor to rmarkdown because it was more simple than LaTeX
+  * combine document language and programming language
+  * TinyTeX
+* Nelson B.
+  * Origins of LaTeX are a PhD thesis who was hired by Stanford research institute, a markup system with logical syntax, adopted from scribe using the @ symbol
+  * Desire for people to focus on what they are writing rather than what it looks like
+  * can buy one document and produce it in many formats
+  * uses R because it was free; commercial packages viewed them as a way to pull down menus and using R forces them to understand the statistical models that are going on
+* Johnathan
+  * pure mathematics research
+  * python programmer
+* Deyan
+  * LaTeX to html5
+* Katherine Brafford
+  * UC Davis studying plants
+* Arthur Ogawa
+  * professional publishing as a consultant
+  * interest in descriptive markup
+* Ulrik Lyngs
+  * wrote package to write thesis
+  * future of rticles package
+
+#### TinyTeX
+
+Goal was to reduce the size of the distribution.
+R uses TinyTeX1

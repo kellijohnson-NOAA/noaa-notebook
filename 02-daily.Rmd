@@ -1,0 +1,362 @@
+# Daily journal
+
+## 2021-10-07
+
+Working on *collaborative workflow* for FIMS I found this
+[training](https://codebender.org/) for workflows on GitHub.
+They advocate for Git Flow in all workflows.
+
+## 2021-10-06
+
+Trevor Riley of the NOAA library and I talked about 508 compliance and NOAA citations.
+Typically, when a NOAA librarian helps you with a document they recommend
+Cite While You Write combined with EndNote.
+The NOAA library is working on getting a single, integrated Endnote library but
+this is not currently available.
+Instead, they have Endnote libraries from individual projects.
+
+### Institutional Repository
+
+All NOAA funded and NOAA published documents are supposed to be entered into the
+[Institutional Repository](repository.library.noaa.gov)
+The goal is to get all entries starting from 2015 to current year.
+They will accept entries from any year though.
+
+The Institutional Repository uses NOAA resources to check metadata and assign a DOI.
+Assigning a DOI to all stock assessment documents would facilitate cataloging them.
+RIS file could be batch downloaded and converted to a bib file.
+
+Everything in the repository should be 508 compliant and
+is checked internally using [a standard](https://libguides.library.noaa.gov/Section508).
+Jamie works on compliance issues every day and
+Jennifer has a good handle on it.
+Their guidance is summarized in the 
+[Quick Start](https://libguides.library.noaa.gov/Section508/QuickStart) Big 5 list.
+
+- [x] send .bib file to Trevor
+- [x] look at the link that Trevor sent to find how many assessments are
+  actually in the institutional repository
+
+### EndNote library
+
+* 200 projects
+* 60 species and projects outside of species research
+* all archived libraries from different projects
+* goal is to bring it into a single repository that could be shared
+* starting with Endangered Species Act work
+* do not manually check information from a publisher or tell publishers when information is incorrect
+
+#### Import of bib file to EndNote
+
+Trevor tried importing the Lingcod.bib file from the 2021 assessment and no metadata was found.
+I did a quick google search and found that Imperial College London has
+[advice on LaTeX with EndNote](https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/library/public/LaTeX-and-Endnote-apr-2019.pdf)
+with
+[filters](https://www.imperial.ac.uk/admin-services/library/learning-support/reference-management/endnote/)
+that are needed to import .bib entries.
+Even with these filters, the ability of EndNote to recognize metadata is not great.
+
+## 2021-09-17
+
+### [Z{\"o}ller et al. 2020](https://doi.org/10.1016/j.techfore.2020.120291)
+
+As the workforce turns more towards remote work,
+decisions are becoming more local (Capra and Luisi, 2016).
+FLOSS-based groups are becoming more like a bazaar,
+structured horizontally and maintained by modular self-organized teams without central management,
+rather than a cathedral, e.g.,
+Linux and Fetchmail.
+Schrape (2018) suggest that with corporate influence in FLOSS there are four types of open source projects,
+
+  1. Corporate-led collaboration projects characterized by clear hierarchies,
+  2. Hierarchical infrastructure projects that are largely run by nonprofits with horizontal structures,
+  3. Elite-centered project communities that are hierarchical centered around a few core developers, and
+  4. Egalitarian oriented peer production communities that maintain horizontal structure.
+
+The 'onion' model suggests that newcomers move through the ranks by
+
+  1. Contributing to bug fixes, documentation, small feature improvements, and discussion;
+  2. Eventually becoming a core developer and contributing to pull requests.
+
+Pull requests dictate the groups hierarchy.
+Small groups (3-7) are the primary settings for socialization, skill transfer, and the delegation of duties (Snow et al., 1986).
+Medium-sized groups (8-20) allow complex interdependent coordination.
+Decentralized groups perform better on complex tasks than centralized groups.
+More centralized communication patterns developed in groups that performed simple discrete tasks.
+
+**Goal settings and quality control** are important group functions that require establishing a decision process.
+Resilient projects have complex structure with more than one person accepting pull requests.
+These complex groups maintained contributors and were more productive than star-shaped groups with a single person designated to accept pull requests.
+
+Sharing information publicly reduces the burden of coordination creating less logistical overhead.
+
+## 2021-08-16
+
+### Thesis Chapter 1
+
+https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12188
+https://academic.oup.com/icesjms/article/77/7-8/2529/5912155#223391660
+https://www.semanticscholar.org/paper/Estimation-and-classification-of-temporal-trends-to-Solvang-Planque/5f5727f6f2b3512ee5d9dc2e1258a7c75ed02ded
+https://www.semanticscholar.org/paper/A-simulation-study-of-trend-detection-methods-for-Hardison-Perretti/c679d003c94b70d587fa9be62f8a11911dc7944b#citing-papers
+https://github.com/nwfsc-timeseries/tvvarss::simTVVAR.R
+https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/arima.sim
+https://github.com/seanhardison1/soe_simulations/blob/master/R/sim_function.R
+https://github.com/kellijohnson-NOAA/tsrelation/blob/master/R/tvvarss_simTVVAR.R
+https://github.com/fate-ewi/bayesdfa::sim.R
+https://journal.r-project.org/archive/2019/RJ-2019-007/index.html
+
+### Hake recruitment
+
+https://github.com/seanhardison1/soe_simulations/blob/master/R/sim_function.R
+
+## 2021-06-10
+
+### Rstudio community talk - [Building Effective Data Science Teams](https://www.rstudio.com/resources/webinars/building-effective-data-science-teams/)
+
+#### Prioritization
+
+You will only ever have time to do 10\% of the work.
+Therefore, it is important to have a list of tasks that are clearly defined and
+when a new task comes in it must be prioritized against the current list.
+Looking at a new task relative to the current list is important because
+if you want to work on the newly added task, then something else will
+need to be moved down the list.
+
+## 2021-06-03
+
+### utils::file_test
+
+Check if a file is a directory or file and if it exists or not.
+You can also test if a file is newer than or older than another file.
+
+I found this function while perusing the
+[bookdown::render_book](https://github.com/rstudio/bookdown/blob/master/R/render.R) function.
+It is used inside of an if statement, where the check is saved to an object,
+something I did not know how to do. I always thought you had to save it outside
+and then test it. For example,
+```{r utils-file_test, eval = FALSE}
+  if (!all(exist <- file_test("-f", input))) {
+    stop("Some files were not found: ",  paste(input[!exist], collapse = ' '))
+  }
+```
+
+### Openscapes
+
+The openscapes training that Eric Ward set up helped to validate my workflow,
+which has been a great productivity generator for me because it often seemed like
+I was wasting time organizing and using such rigid standards.
+It is NOT a waste of time. Helping my future self not hate my job is legitimate.
+
+Yesterday, I got feedback from PEP on my talk about sa4ss for the L-team.
+The previous day I got feedback from KM on the same talk.
+Both experiences were helpful.
+I learned that the more organized you are and
+the better the story of your first and last slides are,
+the better the information will be received.
+
+### R `desc`
+
+The `desc` package helps to read, parse, and edit DESCRIPTION files.
+
+`desc::desc_get_dps(file = "")` provides a list of all dependencies in the
+DESCRIPTION file for a given package passed to file.
+
+### Pacific hake otolith exchange
+
+Exchange of 100 otoliths with DFO
+
+#### Timing
+
+Exchange fish from a single year.
+
+Fish from early in the year are harder to age because the annulus isn't as defined.
+Age readers often do fine when they know when the fish was landed because
+they can correct their read for the timing.
+
+Survey ages will be coming to the lab later this year because of covid
+protocols that delay the timing of things.
+
+#### Bottom trawl survey are harder to read
+
+The ages from the bottom trawl survey for hake are hard to read.
+They are patchy and faint. Not recommended for a beginning reader.
+
+- genetic testing of hake fin clips from the two different surveys,
+midwater versus bottom trawl.
+
+#### Alternative methods for younger fish
+
+Fish length, **otolith weight**, spectroscopy, ...
+
+Large year classes are hard to age when there are lots of little fish.
+
+- [ ] Plot length distribution of age reads across years to see how consistent they are.
+
+## 2021-05-29
+
+### Confidence intervals
+
+When working with R, you can find the confidence interval of an estimate that
+is assumed to have a normal distribution using the stats package.
+
+```{r r-confidenceintervals-crit, echo = TRUE}
+crit <- stats::qnorm(
+  p = 1 - (1 - 0.95) / 2,
+  mean = 0,
+  sd = 1,
+  lower.tail = TRUE,
+  log.p = FALSE
+)
+print(crit)
+```
+
+will find the z score that is associated with a 95\% confidence interval.
+One can change the value of 0.95 to any value between zero and one.
+This z-score is then multiplied by the standard error and both
+subtracted and added to the estimate to give a confidence interval.
+You can also multiply it by the standard deviation, but for small sample sizes
+the standard deviation needs to be corrected for sample size.
+
+### keywords
+
+confidence interval
+statistics
+
+## 2021-05-27
+
+### Lingcod CARE
+
+*   Mark Terwilliger (California): they do not age their own lingcod fins but they do
+    process them
+      * WDFW ages commercial samples, just under 1200 fins
+      * Laurel Lam aged sport samples, 260 samples per year,
+      * Mark Terwilliger is also currently ageing more sport fishery samples
+        as we speak, he taught himself from looking at Laurel's;
+        also doing a second read on some structures that Laurel read
+      * black rockfish at the SWFSC is their bread and butter and there is no way
+        that the SWFSC could age both lingcod and black rockfish at the same time
+      * Josie Thompson started looking into using otoliths in
+        2009 and 2010 (n = 100)
+        to do double reads but nothing came of the study
+*   Nikki Paige (Newport)
+      * 2008 and back 100 percent aged, since then 2009 only half are aged
+      * 300 paired otolith samples, 2016 and 2017 survey data,
+        they will be scanned as well as aged via break and burn,
+      * 2020 was 2000 fins
+      * doesn't use the metal mesh binder clips, instead they use foam mats and pins
+*   Andrew Claiborne (WDFW)
+      * started production ageing in 2000
+      * port-samples do the fin-ray prep
+      * considered otoliths 3-4 years ago (n = 119), surface age on otolith
+        because the otoliths get noisy as you go south, underageing relative to fin rays
+        for the older fish, 5 year old fins appear as 10 year old otolith fish,
+        older fish were fine, another couple hundred of pairs are available;
+        like sablefish, if you only look at break and burn reads will be off but
+        surface reads will help guide break and burn reads;
+*   Stephen Wischniowski
+      * 400-450 per year, 2021 == 1500 b/c they are behind, only age fin rays
+      * currently sampling oldest and youngest fish to do a comparison study
+*   Kevin McNeel (SE Alaska)
+      * fishers only return sampled fish
+      * getting sex data along with otolith data is important
+*   Chris Hinds (ADF&G ADU)
+      * use otoliths
+      * must use nail laqeur b/c they cannot get toxic material b/c there are no roads
+
+## 2021-05-26
+
+### Steering committee
+
+Mix of federal and external participants.
+
+### Cole Monnahan
+
+Regarding how prioritizing is going to happen?
+Should we have a spreadsheet with each stock and their requirements.
+Rick responded with there is a start to that in SIS because it records basic information
+such as what model it is using.
+Christine responded with [Stock SMART][stocksmart] or peer-reviewed manuscripts could be helpful.
+Stock Smart has information on any stock that has an FMP.
+
+As of 2019, 50 assessments are in SIS are VPA and 62 are SCAA
+according to StockSMART.
+
+[stocksmart]: https://www.st.nmfs.noaa.gov/stocksmart?app=homepage
+
+## 2021-05-26
+
+### Rethink Reporting with Automation by Claudio Rebelo and RStudio presentation
+
+#### Abstract
+
+Companies struggle with reporting.
+Specifically, they’re caught in a cycle of inefficient and error-prone workflows that:
+
+*   Place a burden on individual data scientists when reports need to be repeated, updated, or shared.
+*   Prevent decision-makers and business users from getting important, accurate insights in a timely manner.
+
+Resulting in enormous amounts of resources (people, tools, time)
+are invested into delivering a mediocre product to stakeholders,
+reports that are uninspiring to consume, slow to produce, and potentially not accurate.
+
+On May 26th, we invite you to join
+Claudio Rebelo, Actuary at Swiss Re,
+to learn about how companies in every industry, but especially in insurance,
+can revolutionize their reporting capabilities with automation.
+
+You’ll learn about his team’s journey transitioning from a reporting frankenstack,
+involving SAS, Excel, and SQL, to a more effective way with free, open-source tools like R Markdown.
+
+The goal is to inspire you to think about
+what could be possible when it comes to reporting within your own organization,
+with just a little bit of effort.
+You’ll get a high-level overview of Claudio and Swiss Re’s journey,
+along with concrete tactical tips on how to use tools like R Markdown more effectively.
+
+If you’re a team-lead or business user without much experience with R, you’ll learn:
+
+*   The consequences associated with traditional, messy reporting workflows.
+*   The benefits of automation when it comes to reporting.
+*   How to incorporate open-source tools like R Markdown into a corporate environment.
+
+If you’re a data scientists already experienced with R and R Markdown you’ll learn:
+
+*   How to enhance your reporting with Shiny and parameterized reports.
+*   How to automate QA and collaboration tasks, like commenting.
+*   About new packages for specific tasks.
+
+If you’re a data scientists already experienced with R, but not automating reports with tools like R Markdown
+
+We hope this presentation inspires you to start ASAP!
+
+#### About the speaker
+
+Claudio Rebelo / Actuary at Swiss Re
+Claudio Rebelo is an Actuary at Swiss Re in Zurich, Switzerland,
+where he has worked in reserving, pricing and currently model validation,
+having over 12 years of experience in the insurance industry.
+With a keen interest in insurance data visualization he is also involved, at Swiss Re,
+in the implementation of automated reporting solutions with R Markdown.
+
+#### R packages
+
+*   DT: searchable tables
+*   glue
+*   kable
+*   plotly
+*   officer
+
+#### Bookdown
+
+* Can create word documents.
+* Sentence structure
+* Create sentences using ifelse statements
+  * Paramaterized reports
+  *  Use the yaml header with param:
+* Special characters can be escaped.
+* Spell checker: word provides a lot of options,
+but so does RStudio. you can even load your own dictionary.
+
+## Acronyms
+
+* FLOSS - Free/Libre Open Source Software

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 LaTeX | NOAA Notebook</title>
+  <meta name="description" content="A lab notebook for Kelli F. Johnson." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 LaTeX | NOAA Notebook" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A lab notebook for Kelli F. Johnson." />
+  <meta name="github-repo" content="kellijohnson-NOAA/noaa-notebook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 LaTeX | NOAA Notebook" />
+  
+  <meta name="twitter:description" content="A lab notebook for Kelli F. Johnson." />
+  
+
+<meta name="author" content="Kelli F. Johnson" />
+
+
+<meta name="date" content="2021-10-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bookdown-1.html"/>
+<link rel="next" href="r.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">NOAA Notebook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="daily-journal.html"><a href="daily-journal.html"><i class="fa fa-check"></i><b>2</b> Daily journal</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="daily-journal.html"><a href="daily-journal.html#section"><i class="fa fa-check"></i><b>2.1</b> 2021-10-07</a></li>
+<li class="chapter" data-level="2.2" data-path="daily-journal.html"><a href="daily-journal.html#section-1"><i class="fa fa-check"></i><b>2.2</b> 2021-10-06</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="daily-journal.html"><a href="daily-journal.html#institutional-repository"><i class="fa fa-check"></i><b>2.2.1</b> Institutional Repository</a></li>
+<li class="chapter" data-level="2.2.2" data-path="daily-journal.html"><a href="daily-journal.html#endnote-library"><i class="fa fa-check"></i><b>2.2.2</b> EndNote library</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="daily-journal.html"><a href="daily-journal.html#section-2"><i class="fa fa-check"></i><b>2.3</b> 2021-09-17</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="daily-journal.html"><a href="daily-journal.html#zoller-et-al.-2020"><i class="fa fa-check"></i><b>2.3.1</b> <span>Z{"o}ller et al. 2020</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="daily-journal.html"><a href="daily-journal.html#section-3"><i class="fa fa-check"></i><b>2.4</b> 2021-08-16</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="daily-journal.html"><a href="daily-journal.html#thesis-chapter-1"><i class="fa fa-check"></i><b>2.4.1</b> Thesis Chapter 1</a></li>
+<li class="chapter" data-level="2.4.2" data-path="daily-journal.html"><a href="daily-journal.html#hake-recruitment"><i class="fa fa-check"></i><b>2.4.2</b> Hake recruitment</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="daily-journal.html"><a href="daily-journal.html#section-4"><i class="fa fa-check"></i><b>2.5</b> 2021-06-10</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="daily-journal.html"><a href="daily-journal.html#rstudio-community-talk---building-effective-data-science-teams"><i class="fa fa-check"></i><b>2.5.1</b> Rstudio community talk - <span>Building Effective Data Science Teams</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="daily-journal.html"><a href="daily-journal.html#section-5"><i class="fa fa-check"></i><b>2.6</b> 2021-06-03</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="daily-journal.html"><a href="daily-journal.html#utilsfile_test"><i class="fa fa-check"></i><b>2.6.1</b> utils::file_test</a></li>
+<li class="chapter" data-level="2.6.2" data-path="daily-journal.html"><a href="daily-journal.html#openscapes"><i class="fa fa-check"></i><b>2.6.2</b> Openscapes</a></li>
+<li class="chapter" data-level="2.6.3" data-path="daily-journal.html"><a href="daily-journal.html#r-desc"><i class="fa fa-check"></i><b>2.6.3</b> R <code>desc</code></a></li>
+<li class="chapter" data-level="2.6.4" data-path="daily-journal.html"><a href="daily-journal.html#pacific-hake-otolith-exchange"><i class="fa fa-check"></i><b>2.6.4</b> Pacific hake otolith exchange</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="daily-journal.html"><a href="daily-journal.html#section-6"><i class="fa fa-check"></i><b>2.7</b> 2021-05-29</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="daily-journal.html"><a href="daily-journal.html#confidence-intervals"><i class="fa fa-check"></i><b>2.7.1</b> Confidence intervals</a></li>
+<li class="chapter" data-level="2.7.2" data-path="daily-journal.html"><a href="daily-journal.html#keywords"><i class="fa fa-check"></i><b>2.7.2</b> keywords</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="daily-journal.html"><a href="daily-journal.html#section-7"><i class="fa fa-check"></i><b>2.8</b> 2021-05-27</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="daily-journal.html"><a href="daily-journal.html#lingcod-care"><i class="fa fa-check"></i><b>2.8.1</b> Lingcod CARE</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="daily-journal.html"><a href="daily-journal.html#section-8"><i class="fa fa-check"></i><b>2.9</b> 2021-05-26</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="daily-journal.html"><a href="daily-journal.html#steering-committee"><i class="fa fa-check"></i><b>2.9.1</b> Steering committee</a></li>
+<li class="chapter" data-level="2.9.2" data-path="daily-journal.html"><a href="daily-journal.html#cole-monnahan"><i class="fa fa-check"></i><b>2.9.2</b> Cole Monnahan</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="daily-journal.html"><a href="daily-journal.html#section-9"><i class="fa fa-check"></i><b>2.10</b> 2021-05-26</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="daily-journal.html"><a href="daily-journal.html#rethink-reporting-with-automation-by-claudio-rebelo-and-rstudio-presentation"><i class="fa fa-check"></i><b>2.10.1</b> Rethink Reporting with Automation by Claudio Rebelo and RStudio presentation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="daily-journal.html"><a href="daily-journal.html#acronyms"><i class="fa fa-check"></i><b>2.11</b> Acronyms</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="bookdown-1.html"><a href="bookdown-1.html"><i class="fa fa-check"></i><b>4</b> bookdown</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bookdown-1.html"><a href="bookdown-1.html#render-book-to-local-machine"><i class="fa fa-check"></i><b>4.1</b> Render book to local machine</a></li>
+<li class="chapter" data-level="4.2" data-path="bookdown-1.html"><a href="bookdown-1.html#output"><i class="fa fa-check"></i><b>4.2</b> Output</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="bookdown-1.html"><a href="bookdown-1.html#html"><i class="fa fa-check"></i><b>4.2.1</b> html</a></li>
+<li class="chapter" data-level="4.2.2" data-path="bookdown-1.html"><a href="bookdown-1.html#pdf"><i class="fa fa-check"></i><b>4.2.2</b> pdf</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="bookdown-1.html"><a href="bookdown-1.html#warnings"><i class="fa fa-check"></i><b>4.3</b> Warnings</a></li>
+<li class="chapter" data-level="4.4" data-path="bookdown-1.html"><a href="bookdown-1.html#links"><i class="fa fa-check"></i><b>4.4</b> Links</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="latex.html"><a href="latex.html"><i class="fa fa-check"></i><b>5</b> LaTeX</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="latex.html"><a href="latex.html#texhour"><i class="fa fa-check"></i><b>5.1</b> texhour</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="latex.html"><a href="latex.html#section-10"><i class="fa fa-check"></i><b>5.1.1</b> 2021-07-08</a></li>
+<li class="chapter" data-level="5.1.2" data-path="latex.html"><a href="latex.html#section-11"><i class="fa fa-check"></i><b>5.1.2</b> 2021-06-10</a></li>
+<li class="chapter" data-level="5.1.3" data-path="latex.html"><a href="latex.html#section-12"><i class="fa fa-check"></i><b>5.1.3</b> 2021-06-03</a></li>
+<li class="chapter" data-level="5.1.4" data-path="latex.html"><a href="latex.html#section-13"><i class="fa fa-check"></i><b>5.1.4</b> 2021-05-20</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>6</b> R</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="r.html"><a href="r.html#links-1"><i class="fa fa-check"></i><b>6.1</b> Links</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> rmarkdown</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="rmarkdown.html"><a href="rmarkdown.html#labels"><i class="fa fa-check"></i><b>7.1</b> Labels</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="rmarkdown.html"><a href="rmarkdown.html#section-header-labels"><i class="fa fa-check"></i><b>7.1.1</b> Section header labels</a></li>
+<li class="chapter" data-level="7.1.2" data-path="rmarkdown.html"><a href="rmarkdown.html#figures-and-tables"><i class="fa fa-check"></i><b>7.1.2</b> Figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="rmarkdown.html"><a href="rmarkdown.html#citations"><i class="fa fa-check"></i><b>7.2</b> Citations</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="rmarkdown.html"><a href="rmarkdown.html#bib-files"><i class="fa fa-check"></i><b>7.2.1</b> .bib files</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="rmarkdown.html"><a href="rmarkdown.html#math"><i class="fa fa-check"></i><b>7.3</b> Math</a></li>
+<li class="chapter" data-level="7.4" data-path="rmarkdown.html"><a href="rmarkdown.html#links-2"><i class="fa fa-check"></i><b>7.4</b> Links</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>8</b> Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="visualization.html"><a href="visualization.html#links-3"><i class="fa fa-check"></i><b>8.1</b> Links</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NOAA Notebook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="latex" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> LaTeX</h1>
+<div id="texhour" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> texhour</h2>
+<div id="section-10" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> 2021-07-08</h3>
+<p>Identify step by step how to do things such that your future self can replicate.</p>
+<div id="community" class="section level4" number="5.1.1.1">
+<h4><span class="header-section-number">5.1.1.1</span> Community</h4>
+<p>LaTeX support providers want to be treated like gurus rather than supporters.</p>
+<p>LaTeX community is declining.
+Tinytex is positive because it is bringing in the next generation.
+Jonathan Fine is seen as a trouble-maker within the LaTeX community because he gets heated when he believes things are wrong.
+LaTex community believes that people should put up with the pain because it is best that is out there.
+The core of TeX users are mathematicians and physicists, certain batches of other fields that are highly mathematical.
+Group of people without much in common other than typsetting, so no shared purpose.</p>
+</div>
+<div id="resources" class="section level4" number="5.1.1.2">
+<h4><span class="header-section-number">5.1.1.2</span> Resources</h4>
+<p>More of a distance between the users and developers</p>
+<ul>
+<li>tex.stackexchange
+<ul>
+<li>help pages</li>
+</ul></li>
+<li>Learn LaTeX project</li>
+<li>TeX book - search for tex book 3 .bib
+<ul>
+<li>TeX by Examples</li>
+<li>Mathematical TeX by Example</li>
+<li>George Gretzer, More Math into LaTex</li>
+<li>cookbook built on examples</li>
+<li>built on examples</li>
+</ul></li>
+<li>latex mailing list is low-volume and doesn’t do much</li>
+<li>issue trackers for particular projects</li>
+<li>TeX act mailing list</li>
+<li>google the error message, which normally leads to stackexchange</li>
+<li>post to tex news groups
+<ul>
+<li>news groups arose before there were search engines</li>
+<li>taking too many hours a day to keep up with them</li>
+<li>google groups is one of the worst news readers out there</li>
+<li>German tex news group</li>
+<li><a href="https://en.wikipedia.org/wiki/Usenet">usenet</a> - doesn’t run on any one place, ntp servers, text only
+<ul>
+<li>comp.text.tex - in the 1990s this was the stackexchange of its day
+<ul>
+<li>FAQ</li>
+<li>CTAN sends an announcement to this user group for each time a package is submitted</li>
+</ul></li>
+<li>comp.lang.python</li>
+</ul></li>
+</ul></li>
+<li>mathematics stack exchange - use mathjax
+<ul>
+<li>have a big help page that is viewed a large number of times</li>
+<li></li>
+</ul></li>
+<li>help documents or technical documents</li>
+<li>users tend to use the same packages that they have used before</li>
+</ul>
+<p>Timescale for getting the package changed is quite long.
+Most journals do not actually use LaTeX themselves, so the motivation to maintain the packages is not high.</p>
+<p>SML and other formats are what publishers actually use.</p>
+<p>When TeX started it was a typesetting program.
+Journals required typesetting back then.
+Standardization and uniformity were key.
+Reproducibility is important if you have collaborators.
+Python is moving to the top three because of data science.</p>
+<p>Python community has crusty people in it.
+Elm community is the nicest.</p>
+</div>
+<div id="different-versions-of-tex" class="section level4" number="5.1.1.3">
+<h4><span class="header-section-number">5.1.1.3</span> Different versions of TeX</h4>
+<p>Unicode support is hard but needed.
+Luatex and ctex extended TeX to allow for multiple writing directions.
+TeX or pdfTeX doesn’t have the interface to create characters.
+Hans et al. that are part of the contex community,
+the Dutch market thought it was critical to have illustrative content.
+Every document that is worth writing is worth designing.
+Where traditionally, TeX was more cookbook style.
+Luatex is a close to being a standalone system.
+One cannot combine all of the goals into a single platform.
+Originally, TeX was majorly focused on reproducibility.
+Four different rendering systems that produce different output given input.
+Unicode has a new addition every year or two.</p>
+</div>
+<div id="the-stories-of-english" class="section level4" number="5.1.1.4">
+<h4><span class="header-section-number">5.1.1.4</span> The Stories of English</h4>
+<p>Until the advent of dictionaries there was not an agreement.
+It did not bother people that there were differences.
+Dictionaries led to standardized grammar and spelling.
+Even if you try to lay down rules, new words show up and it is difficult to decide how to deal with new entries.
+Difficult to come up with any standards that will be valid for a length of time.
+If we can keep software running and licensed that is the real limiting factor.
+Publishers really need to develop virtual machines to set up typesetting environments that will continue to typeset the documents well into the future.</p>
+</div>
+</div>
+<div id="section-11" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> 2021-06-10</h3>
+<div id="question-i-have" class="section level4" number="5.1.2.1">
+<h4><span class="header-section-number">5.1.2.1</span> Question I have</h4>
+<p>Should we worry about making pdfs accessible
+or should we be moving to html that can be
+printed to pdf.
+If an html is accessible will the printed pdf
+from this accessible html website be accessible.</p>
+</div>
+<div id="jana-schroeder-holman-prize" class="section level4" number="5.1.2.2">
+<h4><span class="header-section-number">5.1.2.2</span> Jana Schroeder Holman Prize</h4>
+<p>What should we do to help Jana.</p>
+<p>A problem is, there is already so much information out there,
+but it is not organized.</p>
+</div>
+<div id="tug-accessibility" class="section level4" number="5.1.2.3">
+<h4><span class="header-section-number">5.1.2.3</span> <a href="https://www.tug.org/twg/accessibility/">Tug accessibility</a></h4>
+<p>TeX user group (TUG)
+is not about end-user accessibility.</p>
+<p><a href="https://www.tug.org/twg/accessibility/">Tug pdf accessibility</a></p>
+<div id="tree-walkers" class="section level5" number="5.1.2.3.1">
+<h5><span class="header-section-number">5.1.2.3.1</span> Tree walkers</h5>
+<ul>
+<li><a href="https://krautzource.github.io/aria-tree-walker/">aria-tree-walker</a>;
+how to make the plug in for screen reading with math jax automatic</li>
+</ul>
+</div>
+<div id="self-voicing" class="section level5" number="5.1.2.3.2">
+<h5><span class="header-section-number">5.1.2.3.2</span> Self voicing</h5>
+<p>Put the smarts into the website rather than the screen reader.
+Self voicing will compete with the screen reader,
+such as <a href="https://www.freedomscientific.com/products/software/jaws/">JAWS</a>
+or <a href="https://www.nvaccess.org/download/">NV Access</a>.
+Someone who doesn’t have the benefit of having a screen reader
+on their machine still might need help.
+Lots of people have problems with reading, such as dyslexia or
+light sensitivity.
+Using ARIA you can control the voicing of the screen reader but
+it takes extra effort in how the web page is coded.</p>
+<p><a href="https://brichwin.pages.iu.edu/canvasBookmarklets.html">Here</a>
+is an example of self voicing from Brian Richwine.</p>
+</div>
+<div id="blind-math" class="section level5" number="5.1.2.3.3">
+<h5><span class="header-section-number">5.1.2.3.3</span> Blind math</h5>
+<p><a href="http://www.nfbnet.org/mailman/listinfo/blindmath_nfbnet.org">BlindMath</a>
+Blind Math list for those interested in mathematics</p>
+</div>
+<div id="daisy" class="section level5" number="5.1.2.3.4">
+<h5><span class="header-section-number">5.1.2.3.4</span> DAISY</h5>
+<p><a href="http://kb.daisy.org/publishing/docs/">DAISY Accessible Publishing Database</a></p>
+</div>
+<div id="e-pub" class="section level5" number="5.1.2.3.5">
+<h5><span class="header-section-number">5.1.2.3.5</span> E-pub</h5>
+<p>Moving towards e-pub in academia rather than pdf.</p>
+</div>
+<div id="pdf-1" class="section level5" number="5.1.2.3.6">
+<h5><span class="header-section-number">5.1.2.3.6</span> pdf</h5>
+<p>An interchange enabler to bridge different platforms.
+pdf is a page-description language as much as dvi is a page-description language.
+pdf can be structured with comments but it not essentially
+a way of conveying that information.
+Whereas, html can provide context to the meaning of the string of words.
+pdf has built-in limitations.
+pdf is not in-of itself a solution for accessibility.
+When we satart with a LaTeX document we have a dream that we have
+something that will provide information to who knows who.</p>
+</div>
+<div id="information-architecture" class="section level5" number="5.1.2.3.7">
+<h5><span class="header-section-number">5.1.2.3.7</span> Information architecture</h5>
+<p>Structure of the data.</p>
+</div>
+<div id="write-the-docs" class="section level5" number="5.1.2.3.8">
+<h5><span class="header-section-number">5.1.2.3.8</span> <a href="writethedocs.org">Write the docs</a></h5>
+<p>Conference for people that write documentation.
+Technical documentation.</p>
+</div>
+<div id="press-books" class="section level5" number="5.1.2.3.9">
+<h5><span class="header-section-number">5.1.2.3.9</span> Press books</h5>
+<p>specialized version of wordpress software with the idea that
+you are making a book, you can output as pdf and it will know
+pdf pagination.
+* <a href="https://old.uits.iu.edu/pressbooks" class="uri">https://old.uits.iu.edu/pressbooks</a>
+* <a href="https://pressbooks.org" class="uri">https://pressbooks.org</a>
+* <a href="https://pressbooks.com/self-publishers/" class="uri">https://pressbooks.com/self-publishers/</a></p>
+</div>
+<div id="mcgraw-hill-encyclopedia-of-science-and-technology" class="section level5" number="5.1.2.3.10">
+<h5><span class="header-section-number">5.1.2.3.10</span> McGraw Hill Encyclopedia of Science and Technology</h5>
+<p>Publish the set of Encyclopedia in entirely descriptive markup
+using sgml. Includes math, chemical formulas.
+Sampled images that were photographs.
+TeX was the bridge between the sgml and the printed page.
+xml has taken over sgml.</p>
+</div>
+<div id="systems-thinking" class="section level5" number="5.1.2.3.11">
+<h5><span class="header-section-number">5.1.2.3.11</span> Systems thinking</h5>
+<p>Multi-purposing as a hallmark is key. A multi-purpose document
+is more expensive to produce.</p>
+<ul>
+<li>need to categorize procedural markup such that it can be tagged
+and potentially removed</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="section-12" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> 2021-06-03</h3>
+<div id="jana-schroeder" class="section level4" number="5.1.3.1">
+<h4><span class="header-section-number">5.1.3.1</span> Jana Schroeder</h4>
+<p>A blind person who is trying to learn how to code to change careers.
+Applied to receive money from a Holman Prize for
+“blind coders blazing trails,” a project
+she started to help blind computer users get acclimated to coding.
+If she receives the funding, then the money will be granted October 01, 2021
+and be good for a year.</p>
+<p>National coding symposium sponsored by American Printing House for the Blind
+and xxx
+aimed at school age blind kids and their parents.
+TV Ramen has done a lot of work but it was not known if this is still current.
+The <a href="https://quorumlanguage.com">Quorum Programming Language</a>
+is a programming language is supposed to be easier for blind people
+to learn to get their foot into the door.</p>
+<p>Visual studio is accessible to the blind more so than other software.
+Color coding is hard for her because she can’t see it when errors are visual
+rather than verbal.</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+send Sean A. and email to get information about resources for voice coding</li>
+<li><input type="checkbox" disabled="" />
+get information to Jana Schroeder from Sean Anderson</li>
+</ul>
+</div>
+</div>
+<div id="section-13" class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> 2021-05-20</h3>
+<div id="participants" class="section level4" number="5.1.4.1">
+<h4><span class="header-section-number">5.1.4.1</span> Participants</h4>
+<ul>
+<li>Johnathan G.
+<ul>
+<li>first blind statistical professor</li>
+<li>an R user because markdown is accessible in its raw state</li>
+</ul></li>
+<li>Derek Kerney
+<ul>
+<li>coworker at Rstudio</li>
+<li>wrote thesis in LaTeX, but now rights in Rmd every day</li>
+</ul></li>
+<li>Yuihu(Eway)
+<ul>
+<li>software engineer at Rstudio</li>
+<li>author of knitr to combine LaTeX and R (reimplemented sweave)</li>
+<li>major contributor to rmarkdown because it was more simple than LaTeX</li>
+<li>combine document language and programming language</li>
+<li>TinyTeX</li>
+</ul></li>
+<li>Nelson B.
+<ul>
+<li>Origins of LaTeX are a PhD thesis who was hired by Stanford research institute, a markup system with logical syntax, adopted from scribe using the @ symbol</li>
+<li>Desire for people to focus on what they are writing rather than what it looks like</li>
+<li>can buy one document and produce it in many formats</li>
+<li>uses R because it was free; commercial packages viewed them as a way to pull down menus and using R forces them to understand the statistical models that are going on</li>
+</ul></li>
+<li>Johnathan
+<ul>
+<li>pure mathematics research</li>
+<li>python programmer</li>
+</ul></li>
+<li>Deyan
+<ul>
+<li>LaTeX to html5</li>
+</ul></li>
+<li>Katherine Brafford
+<ul>
+<li>UC Davis studying plants</li>
+</ul></li>
+<li>Arthur Ogawa
+<ul>
+<li>professional publishing as a consultant</li>
+<li>interest in descriptive markup</li>
+</ul></li>
+<li>Ulrik Lyngs
+<ul>
+<li>wrote package to write thesis</li>
+<li>future of rticles package</li>
+</ul></li>
+</ul>
+</div>
+<div id="tinytex" class="section level4" number="5.1.4.2">
+<h4><span class="header-section-number">5.1.4.2</span> TinyTeX</h4>
+<p>Goal was to reduce the size of the distribution.
+R uses TinyTeX1</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bookdown-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-LaTeX.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["NOAA notebook.pdf", "NOAA notebook.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

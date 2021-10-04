@@ -1,0 +1,37 @@
+# bookdown
+
+## Render book to local machine
+
+```{r bookdown-render, echo=TRUE, eval=FALSE}
+bookdown::render_book("index.Rmd")
+```
+
+## Output
+
+### html
+
+### pdf
+
+To compile this example to PDF,
+you need XeLaTeX.
+Installing [TinyTeX](https://yihui.name/tinytex/),
+which includes XeLaTeX,
+is recommended.
+
+## Warnings
+
+Remember each .Rmd file contains one and only one chapter,
+and a chapter is defined by the first-level heading `#`.
+If the previous is not true,
+then R will warn the user that the number of files does not match the number of headers.
+The warning can be ignored.
+For example,
+
+> You have 5 Rmd input file(s) but only 4 first-level heading(s). Did you forget first-level headings in certain Rmd files?
+
+## Links
+
+  * [How-to-Start-a-Bookdown-Book](https://seankross.com/2016/11/17/How-to-Start-a-Bookdown-Book.html)
+  * [Using bookdown for tidy documentation](https://rachaellappan.github.io/bookdown/)
+  * [Publishing bookdown to GitHub](https://bookdown.org/yihui/bookdown/github.html)
+  * [Minimal bookdown example](https://benmarwick.github.io/bookdown-ort/)
